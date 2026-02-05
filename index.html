@@ -8,20 +8,20 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     :root {
-      --bg: #0f172a;
-      --surface: #1e293b;
-      --surface-hover: #334155;
-      --accent: #38bdf8;
-      --accent-dim: #0ea5e9;
-      --text: #f1f5f9;
-      --text-dim: #94a3b8;
-      --code-bg: #011627;
+      --bg: #0a1930;
+      --surface: #122348;
+      --surface-hover: #1a3060;
+      --accent: #00b8e0;
+      --accent-dim: #0098bd;
+      --text: #ffffff;
+      --text-dim: #b8c5d6;
+      --code-bg: #06101f;
     }
     
     html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
     
     body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-family: 'Arial', 'Helvetica Neue', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -32,28 +32,19 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(10, 25, 48, 0.95);
       backdrop-filter: blur(10px);
       padding: 1rem 2rem;
       display: flex;
       gap: 2rem;
       z-index: 100;
-      border-bottom: 1px solid var(--surface);
+      border-bottom: 3px solid var(--accent);
     }
-    
-    nav a {
-      color: var(--text-dim);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-    
-    nav a:hover { color: var(--accent); }
     
     section {
       min-height: 100vh;
       height: 100vh;
-      padding: 5rem 2rem 2rem;
+      padding: 5rem 2rem 3rem;
       max-width: 900px;
       margin: 0 auto;
       display: flex;
@@ -61,6 +52,17 @@
       justify-content: flex-start;
       overflow-y: auto;
       scroll-snap-align: start;
+      position: relative;
+    }
+    
+    section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent) 0%, #e91e8c 100%);
     }
     
     .hero {
@@ -72,10 +74,7 @@
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      background: linear-gradient(135deg, var(--accent), #a78bfa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--text);
     }
     
     .subtitle {
@@ -87,7 +86,10 @@
     h2 {
       font-size: 1.75rem;
       margin-bottom: 1.5rem;
-      color: var(--accent);
+      color: var(--text);
+      font-weight: 700;
+      padding-left: 1rem;
+      border-left: 4px solid var(--accent);
     }
     
     .card {
@@ -97,10 +99,7 @@
       margin-bottom: 1.5rem;
     }
     
-    .card h3 {
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
+    .card h3 { margin-bottom: 1rem; font-size: 1.2rem; }
     
     .code-block {
       background: var(--code-bg);
@@ -114,31 +113,7 @@
     }
     
     .code-block .comment { color: #637777; }
-    .code-block .keyword { color: #c792ea; }
     .code-block .string { color: #ecc48d; }
-    .code-block .function { color: #82aaff; }
-    
-    .poll-embed {
-      background: linear-gradient(135deg, var(--surface), var(--surface-hover));
-      border: 2px dashed var(--accent-dim);
-      border-radius: 12px;
-      padding: 3rem 2rem;
-      text-align: center;
-      margin: 2rem 0;
-    }
-    
-    .poll-embed p {
-      color: var(--text-dim);
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-    }
-    
-    .poll-embed code {
-      background: var(--code-bg);
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-      font-size: 0.85rem;
-    }
     
     .workflow-step {
       display: flex;
@@ -160,18 +135,10 @@
       flex-shrink: 0;
     }
     
-    .step-content h3 {
-      margin-bottom: 0.5rem;
-    }
+    .step-content h3 { margin-bottom: 0.5rem; }
+    .step-content p { color: var(--text-dim); }
     
-    .step-content p {
-      color: var(--text-dim);
-    }
-    
-    ul {
-      list-style: none;
-      margin: 1rem 0;
-    }
+    ul { list-style: none; margin: 1rem 0; }
     
     ul li {
       padding: 0.5rem 0;
@@ -180,47 +147,16 @@
     }
     
     ul li::before {
-      content: "→";
+      content: "•";
       position: absolute;
       left: 0;
       color: var(--accent);
+      font-weight: bold;
     }
-    
-    .share-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    
-    .share-card {
-      background: var(--surface);
-      padding: 1.5rem;
-      border-radius: 8px;
-      transition: transform 0.2s, background 0.2s;
-    }
-    
-    .share-card:hover {
-      transform: translateY(-2px);
-      background: var(--surface-hover);
-    }
-    
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--bg);
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.2s;
-      margin-top: 1rem;
-    }
-    
-    .btn:hover { background: var(--accent-dim); }
     
     .discussion-prompt {
-      background: linear-gradient(135deg, #1e1b4b, #312e81);
+      background: var(--surface);
+      border-left: 4px solid var(--accent);
       border-radius: 12px;
       padding: 2rem;
       margin: 1.5rem 0;
@@ -228,21 +164,16 @@
     
     .tag {
       display: inline-block;
-      background: var(--surface-hover);
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 1rem;
       margin: 0.25rem;
-      color: var(--text-dim);
+      font-weight: 600;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--text-dim);
-      font-size: 0.9rem;
-    }
-  .slide-indicator {
+    .slide-indicator {
       position: fixed;
       bottom: 2rem;
       right: 2rem;
@@ -257,6 +188,7 @@
       border-radius: 50%;
       background: var(--surface-hover);
       transition: background 0.3s, transform 0.3s;
+      cursor: pointer;
     }
     
     .slide-dot.active {
@@ -391,15 +323,53 @@
   </section>
 
   <section id="poll1">
-    <h2>📊 Poll: How Are You Using AI?</h2>
-    
-    <div class="poll-embed">
-      <h3>🗳️ Zoom Poll</h3>
-      <p>Presenter will launch poll in Zoom<br>
-      <code>Look for the poll popup in your Zoom window</code></p>
+    <h2>💬 Discussion</h2>
+    <div class="discussion-prompt">
+      <h3 style="font-size: 1.5rem;">How often do you use AI tools for coding or analysis?</h3>
+      <div style="margin-top: 2rem;">
+        <span class="tag">Daily</span>
+        <span class="tag">Weekly</span>
+        <span class="tag">Rarely</span>
+        <span class="tag">Never</span>
+      </div>
     </div>
+  </section>
 
-    
+  <section id="poll2">
+    <h2>💬 Discussion</h2>
+    <div class="discussion-prompt">
+      <h3 style="font-size: 1.5rem;">Which tools are you using?</h3>
+      <div style="margin-top: 2rem;">
+        <span class="tag">ChatGPT</span>
+        <span class="tag">Claude</span>
+        <span class="tag">GitHub Copilot</span>
+        <span class="tag">Gemini</span>
+        <span class="tag">Cursor</span>
+        <span class="tag">Other?</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="poll3">
+    <h2>💬 Discussion</h2>
+    <div class="discussion-prompt">
+      <h3 style="font-size: 1.5rem;">What's your biggest win so far with AI tools?</h3>
+    </div>
+  </section>
+
+  <section id="poll4">
+    <h2>💬 Discussion</h2>
+    <div class="discussion-prompt">
+      <h3 style="font-size: 1.5rem;">What's your biggest concern?</h3>
+      <div style="margin-top: 2rem;">
+        <span class="tag">Accuracy / hallucinations</span>
+        <span class="tag">Data privacy</span>
+        <span class="tag">Over-reliance</span>
+        <span class="tag">Code quality</span>
+        <span class="tag">Learning less</span>
+        <span class="tag">Other?</span>
+      </div>
+    </div>
   </section>
 
   <section id="share">
@@ -408,13 +378,11 @@
       What's working for you? Drop your examples here:
     </p>
 
-    <div class="poll-embed">
+    <div class="discussion-prompt">
       <h3>💬 Share in Zoom Chat</h3>
-      <p>Drop your use cases in the Zoom chat — we'll discuss as a group<br>
-      <code>Or unmute and share live!</code></p>
+      <p style="color: var(--text-dim); margin-top: 0.5rem;">Drop your use cases in the Zoom chat — we'll discuss as a group<br>
+      <em>Or unmute and share live!</em></p>
     </div>
-
-    
   </section>
 
   <section id="vibe-coding">
@@ -463,20 +431,18 @@
       </div>
     </div>
 
-    <div class="poll-embed">
+    <div class="discussion-prompt" style="margin-top: 1rem;">
       <h3>❓ Questions?</h3>
-      <p>Use Zoom's "Raise Hand" feature or drop questions in the chat<br>
-      <code>We'll take questions throughout</code></p>
+      <p style="color: var(--text-dim); margin-top: 0.5rem;">Use Zoom's "Raise Hand" feature or drop questions in the chat<br>
+      <em>We'll take questions throughout</em></p>
     </div>
-
-    </section>
+  </section>
 
   <script>
     const sections = document.querySelectorAll('section');
     const dotsContainer = document.getElementById('dots');
     let current = 0;
     
-    // Create dots
     sections.forEach((_, i) => {
       const dot = document.createElement('div');
       dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
