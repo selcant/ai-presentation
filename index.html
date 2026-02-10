@@ -217,25 +217,25 @@
 
   <section id="home" class="hero">
     <h1>AI in Data Analysis</h1>
-    <p class="subtitle">How I'm using AI !</p>
+    <p class="subtitle">How I'm using Claude — and what are you doing?</p>
     <p style="color: var(--text-dim); margin-top: 2rem;">
       👋 Welcome! Follow along on your own screen.<br>
-      We'll go through some of my use cases, then hear from everyone.
+      We'll go through my workflow, then hear from everyone.
     </p>
     <div style="margin-top: 4rem; color: var(--text-dim); font-size: 0.95rem;">
       <p><strong style="color: var(--text);">Selcan Aydin, PhD</strong> — Munger Lab</p>
-      <p style="margin-top: 0.5rem;">Carter Lab Meeting, 02/10/2026</p>
+      <p style="margin-top: 0.5rem;">Carter Lab Meeting, 02/11/2025</p>
     </div>
   </section>
 
   <section id="workflow">
-    <h2>My Claude Use cases</h2>
+    <h2>My Claude Workflow</h2>
     
     <div class="workflow-step">
       <div class="step-num">1</div>
       <div class="step-content">
         <h3>Describe the Problem</h3>
-        <p>Explaine the data and what you're trying to accomplish. Ask for potential solutions with details of trade-offs and approaches.</p>
+        <p>Start by explaining what you're trying to accomplish. Ask for potential solutions with explanations of trade-offs and approaches.</p>
       </div>
     </div>
     
@@ -243,7 +243,7 @@
       <div class="step-num">2</div>
       <div class="step-content">
         <h3>Generate Code & Examples</h3>
-        <p>Ask for code implementation or generation of example outputs to validate an approach before committing.</p>
+        <p>Ask for code implementation or generation of example outputs to validate the approach before committing.</p>
       </div>
     </div>
     
@@ -259,20 +259,18 @@
       <div class="step-num">4</div>
       <div class="step-content">
         <h3>Final Review After Editing</h3>
-        <p>Paste your own code for a review to catch typos, logical errors, or inconsistencies.</p>
+        <p>After making manual edits, paste the code back for a final review to catch typos, logical errors, or inconsistencies.</p>
       </div>
     </div>
   </section>
 
   <section id="works-well">
-    <h2>⚡ What Works Well For Me</h2>
+    <h2>⚡ What Works Well</h2>
     <div class="card">
       <ul>
         <li>Generating tedious code — e.g., pattern detection follow-up in DEGenes</li>
         <li>Logical back-and-forth for stats questions — e.g., linear models in DESeq2</li>
         <li>Code review and correction for typos/errors</li>
-        <li>Generation of different types of visualizations for brainstorming</li>
-        <li>Literature search for specific scientific questions</li>
       </ul>
     </div>
   </section>
@@ -284,40 +282,20 @@
         <li>Never upload private or sensitive data</li>
         <li>Always follow up on sources for statistical claims</li>
         <li>Review AI-generated code to verify it actually does what it claims</li>
-        <li>Always take the biological interpretations with a grain of salt and follow up on the references</li>
       </ul>
     </div>
   </section>
 
   <section id="demo">
     <h2>Quick Demo</h2>
-    <p style="color: var(--text-dim); margin-bottom: 1.5rem;">Let's look through some of the questions I have asked Claude!</p>
+    <p style="color: var(--text-dim); margin-bottom: 1.5rem;">Let's look at some of my previous chats!</p>
     
-    <div class="code-block">
-      <span class="comment"># Step 1: Describe the problem</span><br><br>
-      <span class="string">"""<br>
-      I'm running DESeq2 on RNA-seq data and want to include<br>
-      batch as a covariate in my linear model. I have 3 batches<br>
-      and 2 treatment conditions. What's the best way to set up<br>
-      the design formula, and should I be worried about <br>
-      confounding?<br>
-      """</span><br><br>
-      <span class="comment"># Step 2: After discussion, ask for code</span><br><br>
-      <span class="string">"""<br>
-      That makes sense. Can you give me the R code to set up<br>
-      the DESeqDataSet with batch correction and run the <br>
-      differential expression analysis?<br>
-      """</span><br><br>
-      <span class="comment"># Step 3: Request comments</span><br><br>
-      <span class="string">"""<br>
-      Can you add comments explaining what each step does,<br>
-      especially the design formula syntax?<br>
-      """</span><br><br>
+    <div class="discussion-prompt">
+      <h3 style="font-size: 1.6rem;">Live walkthrough of real use cases</h3>
+      <p style="color: var(--text-dim); margin-top: 1rem;">
+        <em>→ Switching to Claude to show some examples...</em>
+      </p>
     </div>
-
-    <p style="margin-top: 1.5rem; color: var(--text-dim);">
-      <em>→ Live demo: [Presenter will show Claude response]</em>
-    </p>
   </section>
 
   <section id="poll1">
@@ -351,7 +329,7 @@
   <section id="poll3">
     <h2>💬 Discussion</h2>
     <div class="discussion-prompt">
-      <h3 style="font-size: 1.8rem;">What do you like most about AI tools?</h3>
+      <h3 style="font-size: 1.8rem;">What's your biggest win so far with AI tools?</h3>
     </div>
   </section>
 
